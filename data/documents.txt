@@ -1,0 +1,63 @@
+Machine learning is a field of artificial intelligence that focuses on building systems that learn from data. It includes supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised learning involves training a model using labeled data. Common algorithms include linear regression, logistic regression, decision trees, and support vector machines.
+
+Unsupervised learning deals with unlabeled data. Techniques such as clustering and dimensionality reduction are widely used.
+
+Reinforcement learning is a paradigm where an agent learns to make decisions by interacting with an environment and receiving rewards or penalties.
+
+FastAPI is a modern, high-performance Python web framework used to build APIs. It is based on standard Python type hints and supports asynchronous programming.
+
+Uvicorn is an ASGI server used to run FastAPI applications. It allows handling multiple concurrent requests efficiently.
+
+Ridge regression is a regularization technique used in linear models. It adds an L2 penalty term to reduce overfitting and handle multicollinearity.
+
+Lasso regression uses L1 regularization, which can shrink some coefficients to zero, effectively performing feature selection.
+
+In financial markets, lead-lag relationships occur when one asset's price movement precedes another. These relationships can be exploited for trading strategies.
+
+Backtesting is the process of evaluating a trading strategy using historical data. It helps estimate performance metrics such as returns, Sharpe ratio, and drawdowns.
+
+Transaction costs play a critical role in trading strategies. Ignoring costs can lead to overestimation of profitability.
+
+Vector databases store embeddings of documents and allow efficient similarity search. They are widely used in retrieval augmented generation systems.
+
+Retrieval-Augmented Generation (RAG) combines retrieval of relevant documents with language model generation to produce accurate and context-aware answers.
+
+Embeddings are numerical representations of text that capture semantic meaning. Models like sentence-transformers are commonly used to generate embeddings.
+
+FAISS (Facebook AI Similarity Search) is a library for efficient similarity search and clustering of dense vectors.
+
+Agentic AI systems involve multiple components such as planners, executors, and critics working together to solve complex tasks.
+
+A critic module in an AI system evaluates the quality of generated outputs and can trigger re-generation if needed.
+
+Large Language Models (LLMs) like GPT, Claude, and LLaMA can generate human-like text and are often used in RAG systems.
+
+Model deployment is the process of making machine learning models available for inference via APIs or services.
+
+MLOps is a set of practices that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.
+
+Docker is a containerization platform that allows applications to run consistently across environments.
+
+CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability.
+
+Time series data consists of observations indexed by time. It is commonly used in finance, forecasting, and signal processing.
+
+Autoregressive models use past values of a variable to predict future values.
+
+Feature engineering is the process of transforming raw data into features that improve model performance.
+
+Overfitting occurs when a model learns noise instead of the underlying pattern, leading to poor generalization.
+
+Underfitting occurs when a model is too simple to capture the underlying structure of the data.
+
+Hyperparameter tuning is the process of optimizing model parameters to improve performance.
+
+Streaming data systems process data in real time, enabling low-latency applications such as trading and monitoring systems.
+
+Kafka is a distributed streaming platform used for building real-time data pipelines.
+
+Latency is a critical factor in real-time systems and refers to the delay between input and output.
+
+Scalability refers to a system's ability to handle increasing workloads efficiently.
