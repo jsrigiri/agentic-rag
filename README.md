@@ -210,16 +210,6 @@ pytest
 
 ---
 
-## 🧠 Interview Talking Points
-
-- Built an Agentic RAG system with retrieval + reasoning
-- Implemented semantic search using embeddings + FAISS
-- Designed modular architecture (retriever + agent + critic)
-- Deployed via FastAPI API
-- Demonstrated GenAI + MLE integration
-
----
-
 ## 📌 Author
 
 Machine Learning Engineering Portfolio Project  
