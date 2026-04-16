@@ -1,53 +1,73 @@
 # 🚀 Agentic RAG System (End-to-End MLE + GenAI Project)
 
-An end-to-end **Agentic Retrieval-Augmented Generation (RAG)** system that retrieves relevant documents, generates answers, and evaluates outputs using a critic module — all served via a production-ready API.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/API-FastAPI-green)
+![RAG](https://img.shields.io/badge/Architecture-Agentic%20RAG-orange)
+![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 
 ---
 
-## 📌 Problem
+## 📌 Overview
 
-Traditional LLMs hallucinate when they lack context.  
-This project solves that by:
+This project builds a **production-style Agentic Retrieval-Augmented Generation (RAG) system** that:
 
-- Retrieving relevant documents from a knowledge base
-- Generating answers using retrieved context
-- Evaluating answers using a critic module
-- Serving the system via an API
+- Retrieves relevant documents using embeddings
+- Generates answers using retrieved context
+- Evaluates answers using a critic module
+- Serves results via a low-latency API
 
 ---
 
-## 🏗 Architecture
+## 🧠 Problem Statement
 
+Large Language Models (LLMs) often **hallucinate** when they lack context.
+
+This system addresses that by:
+
+- Injecting **relevant knowledge** via retrieval
+- Using **semantic search (FAISS)**
+- Adding a **critic module for validation**
+- Designing a **modular agent-based pipeline**
+
+---
+
+## 🏗 System Architecture
+
+```text
 User Query
    ↓
 Embedding Model
    ↓
 Vector Search (FAISS)
    ↓
-Context Retrieval
+Top-K Context Retrieval
    ↓
 Agent (Answer Generation)
    ↓
 Critic (Answer Validation)
    ↓
 Final Response
+```
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Embeddings: sentence-transformers  
-- Vector Search: FAISS  
-- API: FastAPI  
-- Server: Uvicorn  
-- Data Processing: NumPy  
-- Validation: Pydantic  
-- Testing: Pytest  
+| Layer | Tools |
+|---|---|
+| Embeddings | sentence-transformers |
+| Vector Search | FAISS |
+| API | FastAPI |
+| Server | Uvicorn |
+| Data Processing | NumPy |
+| Validation | Pydantic |
+| Testing | Pytest |
 
 ---
 
 ## 📂 Project Structure
 
+```text
 agentic-rag/
 ├── data/
 │   └── documents.txt
@@ -66,13 +86,14 @@ agentic-rag/
 ├── requirements.txt
 ├── tests/
 └── README.md
+```
 
 ---
 
 ## 📊 Data Pipeline
 
-- Documents stored in data/documents.txt
-- Embedded using sentence-transformers
+- Documents stored in `data/documents.txt`
+- Embedded using `sentence-transformers`
 - Stored in FAISS index for similarity search
 
 ---
@@ -80,22 +101,22 @@ agentic-rag/
 ## 🔎 Retrieval System
 
 - Converts query → embedding
-- Finds top-K similar documents
-- Returns relevant context
+- Performs vector similarity search
+- Returns top-K relevant documents
 
 ---
 
 ## 🤖 Agent (Answer Generator)
 
 - Combines retrieved context
-- Generates response based on query + context
+- Generates answer using query + context
 
 ---
 
 ## 🧪 Critic (Answer Validator)
 
-- Evaluates response quality
-- Flags short or weak answers
+- Evaluates output quality
+- Flags weak or short responses
 - Enables future self-correction loops
 
 ---
@@ -103,93 +124,103 @@ agentic-rag/
 ## ▶️ How to Run
 
 ### 1. Install dependencies
-pip install -r requirements.txt
 
----
+```bash
+pip install -r requirements.txt
+```
 
 ### 2. Build vector store
-python ingest.py
 
----
+```bash
+python ingest.py
+```
 
 ### 3. Run pipeline
+
+```bash
 python main.py
+```
 
----
+### 4. Start API
 
-### 4. Run API
+```bash
 python -m uvicorn api:app --reload
+```
 
-Open:
+Open Swagger UI:
+
+```
 http://127.0.0.1:8000/docs
+```
 
 ---
 
 ## 🔌 API Usage
 
-### POST /ask
+### POST `/ask`
 
-Input:
+#### Input
+
+```json
 {
   "query": "What is machine learning?"
 }
+```
 
-Output:
+#### Output
+
+```json
 {
-  "query": "...",
+  "query": "What is machine learning?",
   "context": ["...", "..."],
-  "answer": "...",
+  "answer": "Answer based on context...",
   "review": "Answer OK"
 }
+```
 
 ---
 
-## 🧪 Tests
+## 🧪 Testing
 
+```bash
 pytest
+```
 
 ---
 
-## 📊 Example Output
-
-- Retrieved documents relevant to query
-- Generated answer using context
-- Critic feedback on answer quality
-
----
-
-## 🔥 Key Highlights (MLE + GenAI Focus)
+## 🔥 Key Highlights
 
 - End-to-end RAG pipeline  
-- Vector database (FAISS) integration  
-- Embedding-based semantic search  
-- Agent-style architecture  
-- Critic module for evaluation  
-- API deployment with FastAPI  
+- FAISS-based vector search  
+- Embedding-based semantic retrieval  
+- Modular agent architecture  
+- Critic evaluation layer  
+- FastAPI deployment  
 
 ---
 
 ## 🚀 Future Improvements
 
 - Integrate LLMs (OpenAI / Ollama / Claude)
-- Add multi-agent orchestration (LangGraph)
+- Add LangGraph orchestration
 - Implement self-correction loop
 - Add evaluation metrics
-- Stream responses
-- Add memory and conversation history
+- Enable streaming responses
+- Add memory / conversation context
 
 ---
 
 ## 🧠 Interview Talking Points
 
 - Built an Agentic RAG system with retrieval + reasoning
-- Implemented embedding-based semantic search
+- Implemented semantic search using embeddings + FAISS
 - Designed modular architecture (retriever + agent + critic)
-- Deployed system as production-ready API
+- Deployed via FastAPI API
 - Demonstrated GenAI + MLE integration
 
 ---
 
 ## 📌 Author
 
-Machine Learning Engineering Portfolio Project
+Machine Learning Engineering Portfolio Project  
+(GenAI + Systems + Production Focus)
