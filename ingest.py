@@ -5,8 +5,11 @@ from config import EMBEDDING_MODEL
 
 os.makedirs("vector_store", exist_ok=True)
 
+docs = []
 with open("data/documents.txt") as f:
-    docs = f.readlines()
+    for line in f:
+        if line.strip():
+            docs.append(line.strip())
 
 embedder = Embedder(EMBEDDING_MODEL)
 embeddings = embedder.encode(docs)
