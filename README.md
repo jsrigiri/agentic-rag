@@ -1,69 +1,122 @@
-# 🚀 Project 2: Agentic RAG with Learned Ranker (Verified Setup)
-
-## 📌 Overview
-This project implements a **Retrieval-Augmented Generation (RAG)** system with a **learned ranking layer** using ML models.
-
-It includes:
-- FAISS retrieval
-- ML-based ranking (classification + regression)
-- GPU support (with fallback)
-- FastAPI serving
-- Full pytest coverage
+# 🚀 Project 2: Agentic RAG with Learned Ranker
 
 ---
 
-## 📁 Project Structure (Verified)
+## 📌 Overview
+
+This project builds a **production-grade Retrieval-Augmented Generation (RAG)** system enhanced with a **learned ranking layer**, following the same structured style as Project 1.
+
+The system:
+- Retrieves candidate documents using embeddings + FAISS
+- Re-ranks them using ML models (classification or regression)
+- Supports **XGBoost, LightGBM, and sklearn models**
+- Includes **GPU acceleration with safe fallback**
+- Exposes a **FastAPI service with Swagger UI**
+- Is fully covered with **pytest-based tests**
+
+---
+
+## 🧠 End-to-End Pipeline
+
+```
+User Query
+   ↓
+Embedder (SentenceTransformer)
+   ↓
+Retriever (FAISS)
+   ↓
+Feature Engineering
+   ↓
+Ranker Model (ML)
+   ↓
+Top-K Context
+   ↓
+Answer Generator
+   ↓
+Critic (Validation)
+```
+
+---
+
+## ⚙️ Core Features
+
+### 🔍 Retrieval Layer
+- SentenceTransformers embeddings
+- FAISS similarity search
+- Top-K document retrieval
+
+### 🧮 Learned Ranking Layer
+Supports both:
+
+| Mode | Models |
+|------|--------|
+| Classification | Logistic, XGBoost, LightGBM |
+| Regression | Linear, XGBoost, LightGBM |
+
+### ⚡ GPU Support
+- XGBoost → `gpu_hist`
+- LightGBM → `gpu` / `cuda`
+- Automatic fallback to CPU if GPU unavailable
+
+### 🧪 Testing
+- Full pytest suite
+- Covers API, ranking, features, retrieval, critic
+
+---
+
+## 📁 Project Structure
 
 ```
 agentic-rag/
 ├── src/
-│   ├── embedder.py            # SentenceTransformer embeddings
-│   ├── retriever.py           # FAISS search
-│   ├── ranker_features.py     # Feature engineering
-│   ├── ranker_model.py        # ML models (XGB, LGBM, etc.)
-│   ├── critic.py              # Output validation
+│   ├── embedder.py
+│   ├── retriever.py
+│   ├── ranker_features.py
+│   ├── ranker_model.py
+│   ├── critic.py
 │
-├── tests/                     # Pytest suite
+├── tests/
+│   ├── test_embedder.py
+│   ├── test_retriever.py
+│   ├── test_ranker_features.py
+│   ├── test_ranker_model.py
+│   ├── test_critic.py
+│   ├── test_api.py
 │
 ├── data/
-│   └── training_pairs.csv     # Training dataset
+│   └── training_pairs.csv
 │
 ├── artifacts/
-│   ├── model.joblib          # Trained ranker
-│   ├── features.joblib       # Feature list
+│   ├── model.joblib
+│   ├── features.joblib
 │
 ├── vector_store/
-│   └── store.pkl             # FAISS embeddings
+│   └── store.pkl
 │
-├── api.py                    # FastAPI app
-├── train_ranker.py           # Train ranker
-├── main.py                   # Run pipeline
-├── config.py                 # Configurations
+├── api.py
+├── train_ranker.py
+├── main.py
+├── config.py
 ├── pytest.ini
 ```
 
 ---
 
-## ⚠️ Important: Required Files Before Running
+## 🧾 Dataset Format
 
-You MUST have:
-
-1. Vector store:
 ```
-vector_store/store.pkl
+query,document,label,score
+"What is ML?","Machine learning is AI",1,0.95
 ```
 
-2. Trained model:
-```
-artifacts/model.joblib
-artifacts/features.joblib
-```
+- `label` → classification target  
+- `score` → regression target  
 
 ---
 
-## 🛠️ Step-by-Step: How to Run
+## 🛠️ Setup & Run (Step-by-Step)
 
-### 1️⃣ Install dependencies
+### 1️⃣ Install Dependencies
 
 ```bash
 pip install fastapi uvicorn sentence-transformers faiss-cpu scikit-learn xgboost lightgbm pandas numpy joblib pytest httpx
@@ -71,7 +124,7 @@ pip install fastapi uvicorn sentence-transformers faiss-cpu scikit-learn xgboost
 
 ---
 
-### 2️⃣ Generate dataset (if not present)
+### 2️⃣ Generate Dataset (Optional)
 
 ```bash
 python generate_training_pairs.py
@@ -79,13 +132,14 @@ python generate_training_pairs.py
 
 ---
 
-### 3️⃣ Train ranker (CRITICAL STEP)
+### 3️⃣ Train Ranker (Required)
 
 ```bash
 python train_ranker.py
 ```
 
-This creates:
+Creates:
+
 ```
 artifacts/model.joblib
 artifacts/features.joblib
@@ -93,19 +147,17 @@ artifacts/features.joblib
 
 ---
 
-### 4️⃣ Build vector store (if not already created)
-
-Make sure your pipeline creates:
+### 4️⃣ Ensure Vector Store Exists
 
 ```
 vector_store/store.pkl
 ```
 
-If missing, your API will fail.
+If missing, retrieval will fail.
 
 ---
 
-### 5️⃣ Run pipeline (sanity check)
+### 5️⃣ Run Full Pipeline
 
 ```bash
 python main.py
@@ -119,59 +171,10 @@ python main.py
 uvicorn api:app --reload
 ```
 
-Open Swagger:
+Swagger UI:
+
 ```
 http://127.0.0.1:8000/docs
-```
-
----
-
-## 🧪 Run Tests
-
-```bash
-pytest -v
-```
-
----
-
-## ❗ Common Errors & Fixes
-
-### ❌ No such file: artifacts/model.joblib
-➡️ Run:
-```bash
-python train_ranker.py
-```
-
----
-
-### ❌ No module named 'src'
-➡️ Ensure `pytest.ini` contains:
-```
-[pytest]
-pythonpath = .
-```
-
----
-
-### ❌ Empty ranked_context
-➡️ Check:
-- vector_store exists
-- embeddings dimension matches model
-
----
-
-### ❌ GPU not working
-➡️ Expected behavior:
-- Falls back to CPU automatically
-
----
-
-## ⚙️ Config Example
-
-```python
-TASK_TYPE = "classification"   # or regression
-RANKER_MODEL_TYPE = "xgboost_clf"
-USE_GPU = True
 ```
 
 ---
@@ -179,6 +182,7 @@ USE_GPU = True
 ## 📘 API Example
 
 ### Request
+
 ```json
 {
   "query": "What is machine learning?"
@@ -186,10 +190,12 @@ USE_GPU = True
 ```
 
 ### Response
+
 ```json
 {
   "query": "...",
   "task_type": "...",
+  "ranker_model_type": "...",
   "ranked_context": [...],
   "answer": "...",
   "review": "..."
@@ -198,16 +204,91 @@ USE_GPU = True
 
 ---
 
-## ✅ Summary
+## 🧪 Running Tests
 
-✔ Verified project structure  
-✔ Clear run sequence  
-✔ Handles common failures  
-✔ Ready for production/API use  
-✔ Fully testable  
+```bash
+pytest -v
+```
+
+Run specific:
+
+```bash
+pytest tests/test_api.py -v
+```
 
 ---
 
-## 🚀 Next Step
+## ❗ Common Issues & Fixes
 
-Move to **Project 3: Full MLOps (CI/CD + Docker + Monitoring)**
+### Missing model.joblib
+```bash
+python train_ranker.py
+```
+
+### No module named 'src'
+Ensure `pytest.ini`:
+
+```
+[pytest]
+pythonpath = .
+```
+
+### Empty ranked_context
+- Check vector store exists
+- Check embeddings dimension consistency
+
+### GPU not used
+- Falls back to CPU automatically (expected behavior)
+
+---
+
+## ⚙️ Configuration
+
+```python
+TASK_TYPE = "classification"   # or "regression"
+RANKER_MODEL_TYPE = "xgboost_clf"
+USE_GPU = True
+```
+
+---
+
+## 🐳 Docker (Optional)
+
+```bash
+docker build -t rag-project2 .
+docker run -p 8000:8000 rag-project2
+```
+
+---
+
+## 🧠 Design Highlights
+
+- Learned ranking improves relevance vs cosine similarity
+- Regression enables fine-grained ranking scores
+- GPU support enables scalability
+- Modular design for production systems
+
+---
+
+## 🚀 Future Improvements
+
+- Cross-encoder re-ranking (BERT)
+- Hybrid search (BM25 + embeddings)
+- Online feedback loop
+- Distributed FAISS
+
+---
+
+## ✅ Summary
+
+✔ End-to-end RAG system  
+✔ Learned ranking layer  
+✔ GPU-enabled training  
+✔ Full pytest coverage  
+✔ Production-ready API  
+
+---
+
+## ➡️ Next Step
+
+👉 Project 3: Full MLOps (CI/CD + Docker + Monitoring)
