@@ -1,0 +1,167 @@
+query,document,label,score
+What is FAISS?,Uvicorn is an ASGI server used to run FastAPI applications.,0,0.22
+What is Kafka?,"Streaming data systems process data in real time, enabling low-latency applications such as trading and monitoring systems.",1,0.91
+What is MLflow?,Backtesting is the process of evaluating a trading strategy using historical data.,0,0.08
+What is RAG?,Embeddings are numerical representations of text that capture semantic meaning.,1,0.92
+What is FAISS?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",0,0.33
+What is FastAPI?,Kafka is a distributed streaming platform used for building real-time data pipelines.,0,0.1
+What is backtesting?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability.,1,0.95
+What is MLflow?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,0,0.23
+What is time series data?,"MLOps is a set of practices that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.",0,0.05
+What is backtesting?,Reinforcement learning is a paradigm where an agent learns by interacting with an environment.,0,0.03
+What is machine learning?,Scalability refers to a system's ability to handle increasing workloads efficiently.,0,0.27
+What is ridge regression?,Feature engineering is the process of transforming raw data into features that improve model performance.,0,0.25
+What is machine learning?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.07
+What is RAG?,"FastAPI is a modern, high-performance Python web framework used to build APIs.",0,0.15
+What is FastAPI?,Model deployment is the process of making machine learning models available for inference via APIs or services.,1,0.89
+What is FastAPI?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.05
+What is Docker?,Pytest is commonly used for Python unit and integration testing.,0,0.13
+What is ridge regression?,Embeddings are numerical representations of text that capture semantic meaning.,0,0.31
+What is FAISS?,Lead-lag relationships occur when one asset's price movement precedes another in financial markets.,0,0.34
+What is machine learning?,Vector databases store embeddings of documents and allow efficient similarity search.,0,0.16
+What is MLflow?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.11
+What is machine learning?,Model deployment is the process of making machine learning models available for inference via APIs or services.,0,0.09
+What is machine learning?,Lead-lag relationships occur when one asset's price movement precedes another in financial markets.,0,0.11
+What is machine learning?,Feature engineering is the process of transforming raw data into features that improve model performance. This concept is important in production ML systems.,1,0.9
+What is Docker?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability.,0,0.3
+What is MLflow?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability. This concept is important in production ML systems.",1,0.8
+What is Kafka?,Kafka is a widely used distributed streaming platform used for building real-time data pipelines.,1,0.84
+What is RAG?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.18
+What is RAG?,Vector databases store embeddings of documents and allow efficient similarity search. This concept is important in production ML systems.,1,0.84
+What is Kafka?,A critic module in an AI system evaluates the quality of generated outputs.,0,0.35
+What is FastAPI?,Autoregressive models use past values of a variable to predict future values.,0,0.12
+What is Kafka?,"Time series data consists of observations indexed by time and is commonly used in finance, forecasting, and signal processing.",0,0.07
+What is Docker?,Docker is a widely used containerization platform that allows applications to run consistently across environments.,1,0.85
+What is MLflow?,Ridge regression is a regularization technique used in linear models. It adds an L2 penalty term to reduce overfitting and handle multicollinearity.,0,0.27
+What is time series data?,"Large Language Models like GPT, Claude, and LLaMA can generate human-like text and are often used in RAG systems.",0,0.21
+What is machine learning?,Supervised learning involves training a model using labeled data.,1,0.9
+What is Docker?,Docker is a containerization platform that allows applications to run consistently across environments.,1,0.9
+What is backtesting?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,0,0.25
+What is RAG?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability.",0,0.22
+What is Docker?,Kafka is a distributed streaming platform used for building real-time data pipelines.,0,0.1
+What is ridge regression?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,0,0.1
+What is FastAPI?,"Time series data consists of observations indexed by time and is commonly used in finance, forecasting, and signal processing.",0,0.21
+What is Kafka?,"Agentic AI systems involve planners, executors, and critics working together to solve complex tasks.",0,0.09
+What is MLflow?,Retrieval-Augmented Generation combines retrieval of relevant documents with language model generation to produce accurate and context-aware answers.,0,0.07
+What is FAISS?,"Agentic AI systems involve planners, executors, and critics working together to solve complex tasks.",0,0.06
+What is FAISS?,Machine learning is a field of artificial intelligence that focuses on building systems that learn from data.,0,0.34
+What is ridge regression?,Ridge regression is a regularization technique used in linear models. It adds an L2 penalty term to reduce overfitting and handle multicollinearity.,1,0.91
+What is backtesting?,Supervised learning involves training a model using labeled data.,0,0.2
+What is FastAPI?,Uvicorn is an ASGI server used to run FastAPI applications.,1,0.91
+What is FAISS?,Embeddings are numerical representations of text that capture semantic meaning.,1,0.9
+What is Kafka?,Kafka is a distributed streaming platform used for building real-time data pipelines.,1,0.88
+What is FAISS?,"FastAPI is a modern, high-performance Python web framework used to build APIs.",0,0.2
+What is machine learning?,Embeddings are numerical representations of text that capture semantic meaning.,0,0.17
+What is RAG?,Kafka is a distributed streaming platform used for building real-time data pipelines.,0,0.22
+What is Docker?,FAISS is a library for efficient similarity search and clustering of dense vectors.,0,0.34
+What is machine learning?,Reinforcement learning is a paradigm where an agent learns by interacting with an environment.,1,0.98
+What is FastAPI?,Embeddings are numerical representations of text that capture semantic meaning.,0,0.25
+What is Kafka?,Autoregressive models use past values of a variable to predict future values.,0,0.11
+What is Kafka?,Model deployment is the process of making machine learning models available for inference via APIs or services.,0,0.15
+What is ridge regression?,"Overfitting occurs when a model learns noise instead of the underlying pattern, leading to poor generalization.",1,0.89
+What is ridge regression?,Hyperparameter tuning is the process of optimizing model parameters to improve performance. This concept is important in production ML systems.,1,0.93
+What is machine learning?,Unsupervised learning deals with unlabeled data using clustering and dimensionality reduction.,1,0.96
+What is Kafka?,Latency is a widely used critical factor in real-time systems and refers to the delay between input and output.,1,0.82
+What is FastAPI?,Feature engineering is the process of transforming raw data into features that improve model performance.,0,0.1
+What is RAG?,"Large Language Models like GPT, Claude, and LLaMA can generate human-like text and are often used in RAG systems.",0,0.24
+What is backtesting?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.02
+What is RAG?,Uvicorn is an ASGI server used to run FastAPI applications.,0,0.17
+What is machine learning?,Docker is a containerization platform that allows applications to run consistently across environments.,0,0.16
+What is FAISS?,Autoregressive models use past values of a variable to predict future values.,0,0.07
+What is Docker?,Unsupervised learning deals with unlabeled data using clustering and dimensionality reduction.,0,0.17
+What is machine learning?,Machine learning is a field of artificial intelligence that focuses on building systems that learn from data.,1,0.94
+What is Docker?,Model deployment is the process of making machine learning models available for inference via APIs or services. This concept is important in production ML systems.,1,0.92
+What is backtesting?,Scalability refers to a system's ability to handle increasing workloads efficiently.,0,0.03
+What is RAG?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability.,0,0.07
+What is ridge regression?,"Classification predicts discrete categories, while regression predicts continuous values.",0,0.28
+What is FAISS?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability.,0,0.24
+What is FastAPI?,Vector databases store embeddings of documents and allow efficient similarity search.,0,0.04
+What is ridge regression?,Hyperparameter tuning is the process of optimizing model parameters to improve performance.,1,0.98
+What is time series data?,Lead-lag relationships are common in financial markets. This concept is important in production ML systems.,1,0.93
+What is FastAPI?,Model deployment is the process of making machine learning models available for inference via APIs or services. This concept is important in production ML systems.,1,0.88
+What is FastAPI?,Uvicorn is an ASGI server often used to run FastAPI applications.,1,0.87
+What is Docker?,Lead-lag relationships occur when one asset's price movement precedes another in financial markets.,0,0.16
+What is MLflow?,Docker is a containerization platform that allows applications to run consistently across environments.,0,0.12
+What is MLflow?,Feature engineering is the process of transforming raw data into features that improve model performance.,0,0.32
+What is ridge regression?,"Overfitting occurs when a model learns noise instead of the underlying pattern, leading to poor generalization. This concept is important in production ML systems.",1,0.86
+What is time series data?,Lead-lag relationships are common in financial markets.,1,0.95
+What is FAISS?,FAISS is a library for efficient similarity search and clustering of dense vectors.,1,0.93
+What is backtesting?,GPU acceleration can speed up training for boosting models when the environment supports it.,0,0.19
+What is time series data?,Reinforcement learning is a paradigm where an agent learns by interacting with an environment.,0,0.34
+What is Kafka?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,1,0.89
+What is ridge regression?,FAISS is a library for efficient similarity search and clustering of dense vectors.,0,0.12
+What is Docker?,Scalability refers to a system's ability to handle increasing workloads efficiently.,0,0.26
+What is RAG?,Reinforcement learning is a paradigm where an agent learns by interacting with an environment.,0,0.27
+What is MLflow?,"MLOps is a widely used set of practices that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.",1,0.92
+What is FastAPI?,Machine learning is a field of artificial intelligence that focuses on building systems that learn from data.,0,0.05
+What is backtesting?,FAISS is a library for efficient similarity search and clustering of dense vectors.,0,0.04
+What is Docker?,Model deployment is the process of making machine learning models available for inference via APIs or services.,1,0.97
+What is Kafka?,Scalability refers to a system's ability to handle increasing workloads efficiently.,0,0.15
+What is RAG?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",0,0.3
+What is time series data?,"Streaming data systems process data in real time, enabling low-latency applications such as trading and monitoring systems.",0,0.22
+What is time series data?,"Agentic AI systems involve planners, executors, and critics working together to solve complex tasks.",0,0.3
+What is backtesting?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability. This concept is important in production ML systems.,1,0.89
+What is RAG?,Retrieval-Augmented Generation combines retrieval of relevant documents with language model generation to produce accurate and context-aware answers. This concept is important in production ML systems.,1,0.85
+What is machine learning?,Unsupervised learning deals with unlabeled data using clustering and dimensionality reduction. This concept is important in production ML systems.,1,0.9
+What is Docker?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability.",1,0.93
+What is machine learning?,Supervised learning involves training a model using labeled data. This concept is important in production ML systems.,1,0.87
+What is time series data?,Autoregressive models use past values of a variable to predict future values. This concept is important in production ML systems.,1,0.94
+What is ridge regression?,Pytest is commonly used for Python unit and integration testing.,0,0.09
+What is FastAPI?,Hyperparameter tuning is the process of optimizing model parameters to improve performance.,0,0.23
+What is MLflow?,"Large Language Models like GPT, Claude, and LLaMA can generate human-like text and are often used in RAG systems.",0,0.31
+What is MLflow?,Pytest is commonly used for Python unit and integration testing.,0,0.19
+What is FastAPI?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",0,0.11
+What is ridge regression?,Kafka is a distributed streaming platform used for building real-time data pipelines.,0,0.03
+What is machine learning?,Reinforcement learning is a widely used paradigm where an agent learns by interacting with an environment.,1,0.96
+What is ridge regression?,Lead-lag relationships are common in financial markets.,0,0.3
+What is MLflow?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",1,0.89
+What is Docker?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,0,0.24
+What is backtesting?,Uvicorn is an ASGI server used to run FastAPI applications.,0,0.21
+What is FAISS?,Embeddings are numerical representations of text that capture semantic meaning. This concept is important in production ML systems.,1,0.89
+What is MLflow?,A critic module in an AI system evaluates the quality of generated outputs.,0,0.22
+What is Kafka?,Retrieval-Augmented Generation combines retrieval of relevant documents with language model generation to produce accurate and context-aware answers.,0,0.28
+What is time series data?,"Time series data consists of observations indexed by time and is commonly used in finance, forecasting, and signal processing.",1,0.91
+What is FAISS?,Vector databases store embeddings of documents and allow efficient similarity search. This concept is important in production ML systems.,1,0.92
+What is machine learning?,Feature engineering is the process of transforming raw data into features that improve model performance.,1,0.91
+What is time series data?,Unsupervised learning deals with unlabeled data using clustering and dimensionality reduction.,0,0.19
+What is backtesting?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability.",0,0.04
+What is machine learning?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",0,0.31
+What is RAG?,FAISS is a widely used library for efficient similarity search and clustering of dense vectors.,1,0.84
+What is Kafka?,Docker is a containerization platform that allows applications to run consistently across environments.,0,0.18
+What is machine learning?,Pytest is commonly used for Python unit and integration testing.,0,0.11
+What is MLflow?,"MLOps is a set of practices that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.",1,0.98
+What is Kafka?,"MLOps is a set of practices that combines machine learning, DevOps, and data engineering to automate and manage the ML lifecycle.",0,0.04
+What is Kafka?,"Streaming data systems process data in real time, enabling low-latency applications such as trading and monitoring systems. This concept is important in production ML systems.",1,0.89
+What is time series data?,Autoregressive models use past values of a variable to predict future values.,1,0.99
+What is RAG?,Latency is a critical factor in real-time systems and refers to the delay between input and output.,0,0.07
+What is RAG?,Vector databases store embeddings of documents and allow efficient similarity search.,1,0.91
+What is backtesting?,Lead-lag relationships occur when one asset's price movement precedes another in financial markets. This concept is important in production ML systems.,1,0.85
+What is ridge regression?,LightGBM and XGBoost are gradient boosting libraries widely used for tabular machine learning.,0,0.33
+What is time series data?,Transaction costs play a critical role in trading strategies because ignoring costs can overestimate profitability.,0,0.08
+What is RAG?,FAISS is a library for efficient similarity search and clustering of dense vectors.,1,0.89
+What is ridge regression?,Machine learning is a field of artificial intelligence that focuses on building systems that learn from data.,0,0.11
+What is FAISS?,Vector databases store embeddings of documents and allow efficient similarity search.,1,0.93
+What is FastAPI?,"FastAPI is a modern, high-performance Python web framework often used to build APIs.",1,0.84
+What is RAG?,Embeddings are numerical representations of text that capture semantic meaning. This concept is important in production ML systems.,1,0.89
+What is time series data?,Vector databases store embeddings of documents and allow efficient similarity search.,0,0.07
+What is Docker?,Backtesting is the process of evaluating a trading strategy using historical data.,0,0.05
+What is ridge regression?,Ridge regression is a widely used regularization technique used in linear models. It adds an L2 penalty term to reduce overfitting and handle multicollinearity.,1,0.87
+What is time series data?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems.",0,0.04
+What is machine learning?,Machine learning is a widely used field of artificial intelligence that focuses on building systems that learn from data.,1,0.93
+What is RAG?,Retrieval-Augmented Generation combines retrieval of relevant documents with language model generation to produce accurate and context-aware answers.,1,0.9
+What is Kafka?,Embeddings are numerical representations of text that capture semantic meaning.,0,0.17
+What is Docker?,Supervised learning involves training a model using labeled data.,0,0.15
+What is time series data?,"Time series data consists of observations indexed by time and is commonly used in finance, forecasting, and signal processing. This concept is important in production ML systems.",1,0.84
+What is backtesting?,Backtesting is the process of evaluating a trading strategy using historical data. This concept is important in production ML systems.,1,0.92
+What is FAISS?,Scalability refers to a system's ability to handle increasing workloads efficiently.,0,0.19
+What is backtesting?,Autoregressive models use past values of a variable to predict future values.,0,0.13
+What is FAISS?,FAISS is a widely used library for efficient similarity search and clustering of dense vectors.,1,0.87
+What is MLflow?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability.",1,0.87
+What is Docker?,"CI/CD pipelines automate testing, building, and deployment of applications to ensure reliability and scalability. This concept is important in production ML systems.",1,0.87
+What is time series data?,GPU acceleration can speed up training for boosting models when the environment supports it.,0,0.24
+What is FastAPI?,"FastAPI is a modern, high-performance Python web framework used to build APIs.",1,0.87
+What is MLflow?,"MLflow is used for experiment tracking, model logging, and lifecycle management in machine learning systems. This concept is important in production ML systems.",1,0.84
+What is backtesting?,Lead-lag relationships occur when one asset's price movement precedes another in financial markets.,1,0.91
+What is machine learning?,A critic module in an AI system evaluates the quality of generated outputs.,0,0.27
+What is FAISS?,Reinforcement learning is a paradigm where an agent learns by interacting with an environment.,0,0.29
+What is backtesting?,Backtesting is the process of evaluating a trading strategy using historical data.,1,0.98

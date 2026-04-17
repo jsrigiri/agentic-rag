@@ -1,4 +1,4 @@
 class Agent:
-    def generate_answer(self, query, context_docs):
-        context = " ".join(context_docs)
+    def generate_answer(self, query, ranked_docs):
+        context = " ".join([d["document"] for d in ranked_docs])
         return f"Answer based on context: {context} | Question: {query}"

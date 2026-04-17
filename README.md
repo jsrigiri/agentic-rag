@@ -1,216 +1,114 @@
-# 🚀 Agentic RAG System (End-to-End MLE + GenAI Project)
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![FastAPI](https://img.shields.io/badge/API-FastAPI-green)
-![RAG](https://img.shields.io/badge/Architecture-Agentic%20RAG-orange)
-![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
-
----
+# 🚀 Project 2: Agentic RAG with Learned Ranker (XGBoost / LightGBM + GPU Support)
 
 ## 📌 Overview
 
-This project builds a **production-style Agentic Retrieval-Augmented Generation (RAG) system** that:
+This project builds a **production-grade Retrieval-Augmented Generation (RAG) system** enhanced with a **learned ranker**.
 
-- Retrieves relevant documents using embeddings
-- Generates answers using retrieved context
-- Evaluates answers using a critic module
-- Serves results via a low-latency API
-
----
-
-## 🧠 Problem Statement
-
-Large Language Models (LLMs) often **hallucinate** when they lack context.
-
-This system addresses that by:
-
-- Injecting **relevant knowledge** via retrieval
-- Using **semantic search (FAISS)**
-- Adding a **critic module for validation**
-- Designing a **modular agent-based pipeline**
+Unlike vanilla RAG, this system:
+- Retrieves candidates via vector similarity
+- Re-ranks them using ML models
+- Supports **classification and regression ranking**
+- Includes **GPU acceleration (optional)**
+- Is fully **testable, reproducible, and deployable**
 
 ---
 
-## 🏗 System Architecture
+## 🧠 Architecture
 
-```text
-User Query
-   ↓
-Embedding Model
-   ↓
-Vector Search (FAISS)
-   ↓
-Top-K Context Retrieval
-   ↓
-Agent (Answer Generation)
-   ↓
-Critic (Answer Validation)
-   ↓
-Final Response
-```
+User Query → Embedder → Retriever → Feature Builder → Ranker → Answer → Critic
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ Features
 
-| Layer | Tools |
-|---|---|
-| Embeddings | sentence-transformers |
-| Vector Search | FAISS |
-| API | FastAPI |
-| Server | Uvicorn |
-| Data Processing | NumPy |
-| Validation | Pydantic |
-| Testing | Pytest |
+### 🔍 Retrieval
+- FAISS-based similarity search
+- SentenceTransformers embeddings
+
+### 🧮 Learned Ranking
+- Logistic / Linear
+- XGBoost (GPU-ready)
+- LightGBM (GPU-ready)
+
+### ⚡ GPU Support
+- Auto fallback to CPU if GPU unavailable
+
+### 🧪 Testing
+- Full pytest suite
+- API + model + feature coverage
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```text
 agentic-rag/
-├── data/
-│   └── documents.txt
 ├── src/
-│   ├── embedder.py
-│   ├── retriever.py
-│   ├── agent.py
-│   ├── critic.py
-│   └── utils.py
-├── vector_store/
-│   └── store.pkl
-├── ingest.py
-├── main.py
-├── api.py
-├── config.py
-├── requirements.txt
 ├── tests/
-└── README.md
-```
+├── data/
+├── artifacts/
+├── vector_store/
+├── api.py
+├── train_ranker.py
+├── main.py
+├── config.py
+├── pytest.ini
 
 ---
 
-## 📊 Data Pipeline
+## 🧾 Dataset Format
 
-- Documents stored in `data/documents.txt`
-- Embedded using `sentence-transformers`
-- Stored in FAISS index for similarity search
+query,document,label,score
 
 ---
 
-## 🔎 Retrieval System
+## 🛠️ Generate Dataset
 
-- Converts query → embedding
-- Performs vector similarity search
-- Returns top-K relevant documents
+python generate_training_pairs.py
 
 ---
 
-## 🤖 Agent (Answer Generator)
+## 🏋️ Train Ranker
 
-- Combines retrieved context
-- Generates answer using query + context
-
----
-
-## 🧪 Critic (Answer Validator)
-
-- Evaluates output quality
-- Flags weak or short responses
-- Enables future self-correction loops
+python train_ranker.py
 
 ---
 
-## ▶️ How to Run
+## ▶️ Run Pipeline
 
-### 1. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Build vector store
-
-```bash
-python ingest.py
-```
-
-### 3. Run pipeline
-
-```bash
 python main.py
-```
-
-### 4. Start API
-
-```bash
-python -m uvicorn api:app --reload
-```
-
-Open Swagger UI:
-
-```
-http://127.0.0.1:8000/docs
-```
 
 ---
 
-## 🔌 API Usage
+## 🌐 Run API
 
-### POST `/ask`
+uvicorn api:app --reload
 
-#### Input
-
-```json
-{
-  "query": "What is machine learning?"
-}
-```
-
-#### Output
-
-```json
-{
-  "query": "What is machine learning?",
-  "context": ["...", "..."],
-  "answer": "Answer based on context...",
-  "review": "Answer OK"
-}
-```
+Swagger: http://127.0.0.1:8000/docs
 
 ---
 
-## 🧪 Testing
+## 🧪 Run Tests
 
-```bash
-pytest
-```
+pytest -v
 
 ---
 
-## 🔥 Key Highlights
+## 🧰 Install Dependencies
 
-- End-to-end RAG pipeline  
-- FAISS-based vector search  
-- Embedding-based semantic retrieval  
-- Modular agent architecture  
-- Critic evaluation layer  
-- FastAPI deployment  
+pip install fastapi uvicorn sentence-transformers faiss-cpu scikit-learn xgboost lightgbm pandas numpy joblib pytest httpx
 
 ---
 
-## 🚀 Future Improvements
+## 🐳 Docker
 
-- Integrate LLMs (OpenAI / Ollama / Claude)
-- Add LangGraph orchestration
-- Implement self-correction loop
-- Add evaluation metrics
-- Enable streaming responses
-- Add memory / conversation context
+docker build -t rag-project2 .
+docker run -p 8000:8000 rag-project2
 
 ---
 
-## 📌 Author
+## ✅ Summary
 
-Machine Learning Engineering Portfolio Project  
-(GenAI + Systems + Production Focus)
+- End-to-end RAG
+- Learned ranking
+- GPU support
+- Full test coverage

@@ -1,14 +1,21 @@
 import faiss
 import numpy as np
 
+
 class Retriever:
     def __init__(self, embeddings, documents):
         self.index = faiss.IndexFlatL2(embeddings.shape[1])
-        self.index.add(embeddings)
+        self.index.add(np.asarray(embeddings, dtype="float32"))
         self.documents = documents
 
     def search(self, query_embedding, k=3):
-        distances, indices = self.index.search(
-            np.array([query_embedding]), k
-        )
-        return [self.documents[i] for i in indices[0]]
+        q = np.asarray([query_embedding], dtype="float32")
+        distances, indices = self.index.search(q, k)
+        return [
+            {
+                "document": self.documents[i],
+                "distance": float(distances[0][j]),
+                "index": int(i),
+            }
+            for j, i in enumerate(indices[0])
+        ]
